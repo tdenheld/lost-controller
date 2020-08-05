@@ -9,13 +9,11 @@ const routes = [{
         path: '/',
         name: 'Home',
         component: Home,
-        title: 'Freek Fabricius - Lost My Controller',
     },
     {
         path: '/scenes/:id',
         name: 'Scene',
         component: Scene,
-        title: 'Scene - Lost My Controller',
     },
 ]
 
