@@ -6,9 +6,11 @@
 		</header>
 
 		<h3 class="fw-b">scenes</h3>
-		<hr class="mb-4" />
-		<div class="mb-2">
-			<router-link to="/scene/scene-1">scene 1</router-link>
+		<hr class="mb-3" />
+		<div class="mb-1">
+			<div v-for="index in 3" :key="index">
+                <router-link :to="{path: '/scene/scene-' + index}">scene {{ index }}</router-link>
+            </div>
 		</div>
 	</div>
 </template>

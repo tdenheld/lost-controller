@@ -1,6 +1,6 @@
 <template>
 	<div class="container">
-		<nav class="pv-4">
+		<nav class="pv-8">
 			<router-link to="/">index</router-link>
 		</nav>
 		<router-view />
