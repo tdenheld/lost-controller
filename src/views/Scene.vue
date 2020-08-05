@@ -1,5 +1,5 @@
 <template>
-	<div class="about">
-		<h1>This is an about page</h1>
+	<div>
+		<h1 class="f40">{{ $route.params.id }}</h1>
 	</div>
 </template>

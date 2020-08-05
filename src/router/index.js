@@ -14,7 +14,8 @@ const routes = [{
     {
         path: '/scene/:id',
         name: 'Scene',
-        component: Scene
+        component: Scene,
+        title: 'Scene - Lost My Controller',
     },
 ]
 
