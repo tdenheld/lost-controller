@@ -25,7 +25,7 @@ $gutter: $global-baseline * 4;
         Fonts
 --------------------*/
 
-$sans: 'NS Sans', helvetica, arial, sans-serif;
+$sans: 'lost', helvetica, arial, sans-serif;
 $mono: 'Courier New', courier;
 $serif: 'Palatino', Georgia, Times, serif;
 
@@ -46,21 +46,8 @@ $ls-heading: -0.016em;
 $black: #000;
 $white: #fff;
 
-$brand: #ffc917;
-$brand-dark: mix($black, $brand, 15%);
-
-$light: $white;
-$dark: #333;
-$darker: #262626;
-
-$green: #00AA89;
-$green-light: #01CEA6;
-
-$blue: #2072FF;
-$blue-light: #69AFFF;
-
-$anthracite: #6a6a7a;
-$anthracite-light: #8b8b9e;
+$light: #F6F1E8;
+$dark: #101417;
 
 $grey-5:  mix($white, $dark, 5%);
 $grey-10: mix($white, $dark, 10%);

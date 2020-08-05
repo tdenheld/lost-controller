@@ -854,11 +854,8 @@
 
 // font colors
 // ----------------------------------------------------------------------
-.f-brand {color: $brand;}
-.f-brand-dark {color: $brand-dark;}
 .f-light {color: $light;}
 .f-dark {color: $dark;}
-.f-darker {color: $darker;}
 .f-grey-10 {color: $grey-10;}
 .f-grey-20 {color: $grey-20;}
 .f-grey-30 {color: $grey-30;}
@@ -947,7 +944,6 @@
       SVG styles
 --------------------*/
 
-.svg-brand svg {fill: $brand;}
 .svg-dark  svg {fill: $dark;}
 .svg-light svg {fill: $light;}
 
@@ -1001,9 +997,7 @@
 // fills
 // --------------------------------------------
 .bg-none    {background: none;}
-.bg-brand   {background-color: $brand;}
 .bg-dark    {background-color: $dark;}
-.bg-darker  {background-color: $darker;}
 .bg-light   {background-color: $light;}
 .bg-white   {background-color: $white;}
 
