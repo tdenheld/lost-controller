@@ -12,7 +12,7 @@ const routes = [{
         title: 'Freek Fabricius - Lost My Controller',
     },
     {
-        path: '/scene/:id',
+        path: '/scenes/:id',
         name: 'Scene',
         component: Scene,
         title: 'Scene - Lost My Controller',
