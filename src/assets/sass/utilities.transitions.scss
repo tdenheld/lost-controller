@@ -1,0 +1,93 @@
+/*-------------------
+   Vue Transitions
+--------------------*/
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 500ms $ease-out;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+
+
+// ------------------------------------
+.fade-up-enter-active,
+.fade-up-leave-active,
+.fade-l-enter-active,
+.fade-l-leave-active,
+.fade-r-enter-active,
+.fade-r-leave-active {
+    transition: all 500ms $ease-out;
+}
+
+.fade-up-enter,
+.fade-up-leave-to {
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.fade-l-enter,
+.fade-l-leave-to {
+    transform: translateX(-20px);
+    opacity: 0;
+}
+
+.fade-r-enter,
+.fade-r-leave-to {
+    transform: translateX(10px);
+    opacity: 0;
+}
+
+
+
+// ------------------------------------
+.scale-enter-active,
+.scale-leave-active {
+    transition: all 200ms $ease-out;
+}
+
+.scale-enter {
+    transform: scale(0.9);
+    opacity: 0;
+}
+
+.scale-leave-to {
+    transform: scale(0.96);
+    opacity: 0;
+}
+
+
+
+// ------------------------------------
+.scale-down-enter-active,
+.scale-down-leave-active {
+    transition: all 500ms $ease-out;
+    transform-origin: 0 0;
+}
+
+.scale-down-enter {
+    transform: scaleY(0.9);
+    opacity: 0;
+}
+
+.scale-down-leave-to {
+    opacity: 0;
+}
+
+
+
+// ------------------------------------
+.scale-xl-enter-active,
+.scale-xl-leave-active {
+    transition: all 500ms $ease-out;
+}
+
+.scale-xl-enter,
+.scale-xl-leave-to {
+    transform: scale(0);
+    opacity: 0;
+}

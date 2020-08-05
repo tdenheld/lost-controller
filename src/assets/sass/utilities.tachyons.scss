@@ -1,0 +1,1019 @@
+/*-------------------------------------------------
+	  ************* Utilities **************
+-------------------------------------------------*/
+
+// displays
+// ----------------------------------------------------------------------
+.dn  { display: none; }
+.di  { display: inline; }
+.db  { display: block; }
+.dib { display: inline-block; }
+.dit { display: inline-table; }
+.dt  { display: table; }
+.df  { display: flex; }
+
+
+
+// overflows | positions
+// ----------------------------------------------------------------------
+.o-hidden { overflow: hidden; }
+.pos-r { position: relative; }
+.pos-a { position: absolute; }
+.pos-f { position: fixed; }
+.pos-s { position: static; }
+.pos-i { position: inherit; }
+
+// nudge elements a tiny bit
+@for $i from 0 through 16 {
+    $y: $i * 1px;
+    .top-#{$i}px {top: $y;}
+    .top-min-#{$i}px {top: -$y;}
+    .bottom-#{$i}px {bottom: $y;}
+    .bottom-min-#{$i}px {bottom: -$y;}
+    .left-#{$i}px {left: $y;}
+    .left-min-#{$i}px {left: -$y;}
+    .right-#{$i}px {right: $y;}
+    .right-min-#{$i}px {right: -$y;}
+}
+
+
+
+// full fills
+// ----------------------------------------------------------------------
+.full-absolute { @include full(absolute); }
+.full-fixed    { @include full(fixed); }
+
+
+
+// rotation
+// ----------------------------------------------------------------------
+.rotate-45  { transform: rotate(45deg); }
+.rotate-90  { transform: rotate(90deg); }
+.rotate-135 { transform: rotate(135deg); }
+.rotate-180 { transform: rotate(180deg); }
+.rotate-225 { transform: rotate(225deg); }
+.rotate-270 { transform: rotate(270deg); }
+.rotate-315 { transform: rotate(315deg); }
+
+.rotate-svg-45  { svg { transform: rotate(45deg); }}
+.rotate-svg-90  { svg { transform: rotate(90deg); }}
+.rotate-svg-135 { svg { transform: rotate(135deg); }}
+.rotate-svg-180 { svg { transform: rotate(180deg); }}
+.rotate-svg-225 { svg { transform: rotate(225deg); }}
+.rotate-svg-270 { svg { transform: rotate(270deg); }}
+.rotate-svg-315 { svg { transform: rotate(315deg); }}
+
+
+
+/*-------------------
+       Spacers
+--------------------*/
+
+// auto-margins
+.ma-auto {margin: auto;}
+.mh-auto {margin: 0 auto;}
+.mv-auto {margin: auto 0;}
+
+@include respond-min($ml) {
+    .ma-auto\@ml {margin: auto;}
+    .mh-auto\@ml {margin: 0 auto;}
+    .mv-auto\@ml {margin: auto 0;}
+    .ml-auto\@ml {margin-left: auto;}
+    .mr-auto\@ml {margin-right: auto;}
+}
+@include respond-max($ml) {
+    .ma-auto-until\@ml {margin: auto;}
+    .mh-auto-until\@ml {margin: 0 auto;}
+    .mv-auto-until\@ml {margin: auto 0;}
+    .ml-auto-until\@ml {margin-left: auto;}
+    .mr-auto-until\@ml {margin-right: auto;}  
+}
+@include respond-min($l) {
+    .ma-auto\@l {margin: auto;}
+    .mh-auto\@l {margin: 0 auto;}
+    .mv-auto\@l {margin: auto 0;}
+}
+@include respond-min($xxxl) {
+    .ma-auto\@xxl {margin: auto;}
+    .mh-auto\@xxl {margin: 0 auto;}
+    .mv-auto\@xxl {margin: auto 0;}
+}
+
+@for $i from 0 through 20 {	
+	// margin
+	.ma-#{$i} {	margin: space($i) }
+	.mh-#{$i} {	margin-left: space($i); margin-right: space($i); }
+	.mv-#{$i} {	margin-top: space($i); margin-bottom: space($i); }
+	.mt-#{$i} {	margin-top: space($i); }
+	.mb-#{$i} {	margin-bottom: space($i); }
+	.ml-#{$i} {	margin-left: space($i); }
+	.mr-#{$i} {	margin-right: space($i); }
+
+	// padding
+	.pa-#{$i} {	padding: space($i); }
+	.ph-#{$i} {	padding-left: space($i); padding-right: space($i); }
+	.pv-#{$i} {	padding-top: space($i); padding-bottom: space($i); }
+	.pt-#{$i} {	padding-top: space($i); }
+	.pb-#{$i} {	padding-bottom: space($i); }
+	.pl-#{$i} {	padding-left: space($i); }
+    .pr-#{$i} {	padding-right: space($i); }
+
+    @include respond-min($m) {
+        // margin
+        .ma-#{$i}\@m { margin: space($i) }
+        .mh-#{$i}\@m { margin-left: space($i); margin-right: space($i); }
+        .mv-#{$i}\@m { margin-top: space($i); margin-bottom: space($i); }
+        .mt-#{$i}\@m { margin-top: space($i); }
+        .mb-#{$i}\@m { margin-bottom: space($i); }
+        .ml-#{$i}\@m { margin-left: space($i); }
+        .mr-#{$i}\@m { margin-right: space($i); }
+
+        // padding
+        .pa-#{$i}\@m { padding: space($i); }
+        .ph-#{$i}\@m { padding-left: space($i); padding-right: space($i); }
+        .pv-#{$i}\@m { padding-top: space($i); padding-bottom: space($i); }
+        .pt-#{$i}\@m { padding-top: space($i); }
+        .pb-#{$i}\@m { padding-bottom: space($i); }
+        .pl-#{$i}\@m { padding-left: space($i); }
+        .pr-#{$i}\@m { padding-right: space($i); }
+	}
+    
+    @include respond-max($m) {
+        // margin
+        .ma-#{$i}-until\@m { margin: space($i) }
+        .mh-#{$i}-until\@m { margin-left: space($i); margin-right: space($i); }
+        .mv-#{$i}-until\@m { margin-top: space($i); margin-bottom: space($i); }
+        .mt-#{$i}-until\@m { margin-top: space($i); }
+        .mb-#{$i}-until\@m { margin-bottom: space($i); }
+        .ml-#{$i}-until\@m { margin-left: space($i); }
+        .mr-#{$i}-until\@m { margin-right: space($i); }
+
+        // padding
+        .pa-#{$i}-until\@m { padding: space($i); }
+        .ph-#{$i}-until\@m { padding-left: space($i); padding-right: space($i); }
+        .pv-#{$i}-until\@m { padding-top: space($i); padding-bottom: space($i); }
+        .pt-#{$i}-until\@m { padding-top: space($i); }
+        .pb-#{$i}-until\@m { padding-bottom: space($i); }
+        .pl-#{$i}-until\@m { padding-left: space($i); }
+        .pr-#{$i}-until\@m { padding-right: space($i); }
+    }
+
+	@include respond-min($l) {
+        // margin
+        .ma-#{$i}\@l { margin: space($i) }
+        .mh-#{$i}\@l { margin-left: space($i); margin-right: space($i); }
+        .mv-#{$i}\@l { margin-top: space($i); margin-bottom: space($i); }
+        .mt-#{$i}\@l { margin-top: space($i); }
+        .mb-#{$i}\@l { margin-bottom: space($i); }
+        .ml-#{$i}\@l { margin-left: space($i); }
+        .mr-#{$i}\@l { margin-right: space($i); }
+
+        // padding
+        .pa-#{$i}\@l { padding: space($i); }
+        .ph-#{$i}\@l { padding-left: space($i); padding-right: space($i); }
+        .pv-#{$i}\@l { padding-top: space($i); padding-bottom: space($i); }
+        .pt-#{$i}\@l { padding-top: space($i); }
+        .pb-#{$i}\@l { padding-bottom: space($i); }
+        .pl-#{$i}\@l { padding-left: space($i); }
+        .pr-#{$i}\@l { padding-right: space($i); }
+    }
+    
+	@include respond-min($xxl) {
+        // margin
+        .ma-#{$i}\@xxl { margin: space($i) }
+        .mh-#{$i}\@xxl { margin-left: space($i); margin-right: space($i); }
+        .mv-#{$i}\@xxl { margin-top: space($i); margin-bottom: space($i); }
+        .mt-#{$i}\@xxl { margin-top: space($i); }
+        .mb-#{$i}\@xxl { margin-bottom: space($i); }
+        .ml-#{$i}\@xxl { margin-left: space($i); }
+        .mr-#{$i}\@xxl { margin-right: space($i); }
+
+        // padding
+        .pa-#{$i}\@xxl { padding: space($i); }
+        .ph-#{$i}\@xxl { padding-left: space($i); padding-right: space($i); }
+        .pv-#{$i}\@xxl { padding-top: space($i); padding-bottom: space($i); }
+        .pt-#{$i}\@xxl { padding-top: space($i); }
+        .pb-#{$i}\@xxl { padding-bottom: space($i); }
+        .pl-#{$i}\@xxl { padding-left: space($i); }
+        .pr-#{$i}\@xxl { padding-right: space($i); }
+    }
+    
+    @include respond-max($xxl) {
+        // margin
+        .ma-#{$i}-until\@xxl { margin: space($i) }
+        .mh-#{$i}-until\@xxl { margin-left: space($i); margin-right: space($i); }
+        .mv-#{$i}-until\@xxl { margin-top: space($i); margin-bottom: space($i); }
+        .mt-#{$i}-until\@xxl { margin-top: space($i); }
+        .mb-#{$i}-until\@xxl { margin-bottom: space($i); }
+        .ml-#{$i}-until\@xxl { margin-left: space($i); }
+        .mr-#{$i}-until\@xxl { margin-right: space($i); }
+
+        // padding
+        .pa-#{$i}-until\@xxl { padding: space($i); }
+        .ph-#{$i}-until\@xxl { padding-left: space($i); padding-right: space($i); }
+        .pv-#{$i}-until\@xxl { padding-top: space($i); padding-bottom: space($i); }
+        .pt-#{$i}-until\@xxl { padding-top: space($i); }
+        .pb-#{$i}-until\@xxl { padding-bottom: space($i); }
+        .pl-#{$i}-until\@xxl { padding-left: space($i); }
+        .pr-#{$i}-until\@xxl { padding-right: space($i); }
+	}
+}
+
+
+/*-------------------
+       Widths
+--------------------*/
+
+.w-auto {    width:    auto; }
+.w-inherit { width: inherit; }
+
+.w-10 {  width:  10%; }
+.w-20 {  width:  20%; }
+.w-25 {  width:  25%; }
+.w-30 {  width:  30%; }
+.w-33 {  width:  33%; }
+.w-34 {  width:  34%; }
+.w-40 {  width:  40%; }
+.w-50 {  width:  50%; }
+.w-60 {  width:  60%; }
+.w-70 {  width:  70%; }
+.w-75 {  width:  75%; }
+.w-80 {  width:  80%; }
+.w-90 {  width:  90%; }
+.w-100 { width: 100%; }
+
+@include respond-min($ml) {
+	.w-auto\@ml {    width:    auto; }
+	.w-inherit\@ml { width: inherit; }
+	.w-10\@ml {  width:  10%; }
+	.w-20\@ml {  width:  20%; }
+	.w-25\@ml {  width:  25%; }
+	.w-30\@ml {  width:  30%; }
+	.w-33\@ml {  width:  33%; }
+	.w-34\@ml {  width:  34%; }
+	.w-40\@ml {  width:  40%; }
+	.w-50\@ml {  width:  50%; }
+	.w-60\@ml {  width:  60%; }
+	.w-70\@ml {  width:  70%; }
+	.w-75\@ml {  width:  75%; }
+	.w-80\@ml {  width:  80%; }
+	.w-90\@ml {  width:  90%; }
+	.w-100\@ml { width: 100%; }
+}
+@include respond-min($l) {
+	.w-auto\@l {    width:    auto; }
+	.w-inherit\@l { width: inherit; }
+	.w-10\@l {  width:  10%; }
+	.w-20\@l {  width:  20%; }
+	.w-25\@l {  width:  25%; }
+	.w-30\@l {  width:  30%; }
+	.w-33\@l {  width:  33%; }
+	.w-34\@l {  width:  34%; }
+	.w-40\@l {  width:  40%; }
+	.w-50\@l {  width:  50%; }
+	.w-60\@l {  width:  60%; }
+	.w-70\@l {  width:  70%; }
+	.w-75\@l {  width:  75%; }
+	.w-80\@l {  width:  80%; }
+	.w-90\@l {  width:  90%; }
+	.w-100\@l { width: 100%; }
+}
+@include respond-min($xxxl) {
+	.w-auto\@xxl {    width:    auto; }
+	.w-inherit\@xxl { width: inherit; }
+	.w-10\@xxl {  width:  10%; }
+	.w-20\@xxl {  width:  20%; }
+	.w-25\@xxl {  width:  25%; }
+	.w-30\@xxl {  width:  30%; }
+	.w-33\@xxl {  width:  33%; }
+	.w-34\@xxl {  width:  34%; }
+	.w-40\@xxl {  width:  40%; }
+	.w-50\@xxl {  width:  50%; }
+	.w-60\@xxl {  width:  60%; }
+	.w-70\@xxl {  width:  70%; }
+	.w-75\@xxl {  width:  75%; }
+	.w-80\@xxl {  width:  80%; }
+	.w-90\@xxl {  width:  90%; }
+	.w-100\@xxl { width: 100%; }
+}
+
+// max widths
+@for $i from 0 through 32 {
+    $class: $i * 50;
+    $value: $i * 50px;
+
+    .mxw-#{$class} {
+        max-width: #{$value};
+    }
+
+    @include respond-min($ml) {
+        .mxw-#{$class}\@ml {
+            max-width: #{$value};
+        }
+    }
+}
+
+.mxw-init { max-width: initial; }
+.mxw-auto { max-width: auto; }
+
+
+
+
+/*-------------------
+      CSS grid
+--------------------*/
+
+// base
+// -------------------------
+.g { display: grid }
+.g-af-c { grid-auto-flow: column;  grid-auto-columns: max-content;}
+.g-af-r { grid-auto-flow: row; grid-auto-rows: max-content; }
+
+// gap
+// -------------------------
+@for $i from 0 through 12 {
+	.gap-#{$i} { gap: space($i); }
+	.col-gap-#{$i} { column-gap: space($i); }
+    .row-gap-#{$i} { row-gap: space($i); }
+    
+    @include respond-min($l) {
+        .gap-#{$i}\@l { gap: space($i); }
+        .col-gap-#{$i}\@l { column-gap: space($i); }
+        .row-gap-#{$i}\@l { row-gap: space($i); }
+    }
+
+    @include respond-min($xxl) {
+        .gap-#{$i}\@xxl { gap: space($i); }
+        .col-gap-#{$i}\@xxl { column-gap: space($i); }
+        .row-gap-#{$i}\@xxl { row-gap: space($i); }
+    }
+}
+.gap-2px { gap: 2px; }
+
+// fractions
+// -------------------------
+.g-1 {grid-template-columns: 1fr;}
+.g-2 {grid-template-columns: repeat(2,1fr);}
+.g-3 {grid-template-columns: repeat(3,1fr);}
+.g-4 {grid-template-columns: repeat(4,1fr);}
+.g-5 {grid-template-columns: repeat(5,1fr);}
+.g-6 {grid-template-columns: repeat(6,1fr);}
+
+@include respond-min($ml) {
+	.g-1\@ml {grid-template-columns: 1fr;}
+	.g-2\@ml {grid-template-columns: repeat(2,1fr);}
+	.g-3\@ml {grid-template-columns: repeat(3,1fr);}
+	.g-4\@ml {grid-template-columns: repeat(4,1fr);}
+	.g-5\@ml {grid-template-columns: repeat(5,1fr);}
+	.g-6\@ml {grid-template-columns: repeat(6,1fr);}
+}
+@include respond-min($l) {
+	.g-1\@l {grid-template-columns: 1fr;}
+	.g-2\@l {grid-template-columns: repeat(2,1fr);}
+	.g-3\@l {grid-template-columns: repeat(3,1fr);}
+	.g-4\@l {grid-template-columns: repeat(4,1fr);}
+	.g-5\@l {grid-template-columns: repeat(5,1fr);}
+	.g-6\@l {grid-template-columns: repeat(6,1fr);}
+}
+@include respond-min($xxl) {
+	.g-1\@xxl {grid-template-columns: 1fr;}
+	.g-2\@xxl {grid-template-columns: repeat(2,1fr);}
+	.g-3\@xxl {grid-template-columns: repeat(3,1fr);}
+	.g-4\@xxl {grid-template-columns: repeat(4,1fr);}
+	.g-5\@xxl {grid-template-columns: repeat(5,1fr);}
+	.g-6\@xxl {grid-template-columns: repeat(6,1fr);}
+}
+
+// combos
+// -------------------------
+.g-m-1 {grid-template-columns: max-content 1fr;}
+.g-1-m {grid-template-columns: 1fr max-content;}
+.g-m-m {grid-template-columns: max-content max-content;}
+.g-2-1 {grid-template-columns: 2fr 1fr;}
+.g-1-2 {grid-template-columns: 1fr 2fr;}
+.g-3-2 {grid-template-columns: 3fr 2fr;}
+.g-2-3 {grid-template-columns: 2fr 3fr;}
+.g-3-1 {grid-template-columns: 3fr 1fr;}
+.g-1-3 {grid-template-columns: 1fr 3fr;}
+.g-5-3 {grid-template-columns: 5fr 3fr;}
+.g-3-5 {grid-template-columns: 3fr 5fr;}
+
+@include respond-min($ml) {
+	.g-m-1\@ml {grid-template-columns: max-content 1fr;}
+	.g-1-m\@ml {grid-template-columns: 1fr max-content;}
+	.g-m-m\@ml {grid-template-columns: max-content max-content;}
+	.g-2-1\@ml {grid-template-columns: 2fr 1fr;}
+	.g-1-2\@ml {grid-template-columns: 1fr 2fr;}
+	.g-3-2\@ml {grid-template-columns: 3fr 2fr;}
+	.g-2-3\@ml {grid-template-columns: 2fr 3fr;}
+	.g-3-1\@ml {grid-template-columns: 3fr 1fr;}
+	.g-1-3\@ml {grid-template-columns: 1fr 3fr;}
+	.g-5-3\@ml {grid-template-columns: 5fr 3fr;}
+	.g-3-5\@ml {grid-template-columns: 3fr 5fr;}
+}
+@include respond-min($l) {
+	.g-m-1\@l {grid-template-columns: max-content 1fr;}
+	.g-1-m\@l {grid-template-columns: 1fr max-content;}
+	.g-m-m\@l {grid-template-columns: max-content max-content;}
+	.g-2-1\@l {grid-template-columns: 2fr 1fr;}
+	.g-1-2\@l {grid-template-columns: 1fr 2fr;}
+	.g-3-2\@l {grid-template-columns: 3fr 2fr;}
+	.g-2-3\@l {grid-template-columns: 2fr 3fr;}
+	.g-3-1\@l {grid-template-columns: 3fr 1fr;}
+	.g-1-3\@l {grid-template-columns: 1fr 3fr;}
+	.g-5-3\@l {grid-template-columns: 5fr 3fr;}
+	.g-3-5\@l {grid-template-columns: 3fr 5fr;}
+}
+@include respond-min($xxl) {
+	.g-m-1\@xxl {grid-template-columns: max-content 1fr;}
+	.g-1-m\@xxl {grid-template-columns: 1fr max-content;}
+	.g-m-m\@xxl {grid-template-columns: max-content max-content;}
+	.g-2-1\@xxl {grid-template-columns: 2fr 1fr;}
+	.g-1-2\@xxl {grid-template-columns: 1fr 2fr;}
+	.g-3-2\@xxl {grid-template-columns: 3fr 2fr;}
+	.g-2-3\@xxl {grid-template-columns: 2fr 3fr;}
+	.g-3-1\@xxl {grid-template-columns: 3fr 1fr;}
+	.g-1-3\@xxl {grid-template-columns: 1fr 3fr;}
+	.g-5-3\@xxl {grid-template-columns: 5fr 3fr;}
+	.g-3-5\@xxl {grid-template-columns: 3fr 5fr;}
+}
+@include respond-min($xxxl) {
+	.g-m-1\@xxxl {grid-template-columns: max-content 1fr;}
+	.g-1-m\@xxxl {grid-template-columns: 1fr max-content;}
+	.g-m-m\@xxxl {grid-template-columns: max-content max-content;}
+	.g-2-1\@xxxl {grid-template-columns: 2fr 1fr;}
+	.g-1-2\@xxxl {grid-template-columns: 1fr 2fr;}
+	.g-3-2\@xxxl {grid-template-columns: 3fr 2fr;}
+	.g-2-3\@xxxl {grid-template-columns: 2fr 3fr;}
+	.g-3-1\@xxxl {grid-template-columns: 3fr 1fr;}
+	.g-1-3\@xxxl {grid-template-columns: 1fr 3fr;}
+	.g-5-3\@xxxl {grid-template-columns: 5fr 3fr;}
+	.g-3-5\@xxxl {grid-template-columns: 3fr 5fr;}
+}
+
+//childs
+// -------------------------
+.gc-1 {grid-column: span 1;}
+.gc-2 {grid-column: span 2;}
+.gc-3 {grid-column: span 3;}
+.gc-4 {grid-column: span 4;}
+.gc-5 {grid-column: span 5;}
+.gc-6 {grid-column: span 6;}
+
+@include respond-min($ml) {
+	.gc-1\@ml {grid-column: span 1;}
+	.gc-2\@ml {grid-column: span 2;}
+	.gc-3\@ml {grid-column: span 3;}
+	.gc-4\@ml {grid-column: span 4;}
+	.gc-5\@ml {grid-column: span 5;}
+	.gc-6\@ml {grid-column: span 6;}
+}
+@include respond-min($l) {
+	.gc-1\@l {grid-column: span 1;}
+	.gc-2\@l {grid-column: span 2;}
+	.gc-3\@l {grid-column: span 3;}
+	.gc-4\@l {grid-column: span 4;}
+	.gc-5\@l {grid-column: span 5;}
+	.gc-6\@l {grid-column: span 6;}
+}
+@include respond-min($xxxl) {
+	.gc-1\@xxl {grid-column: span 1;}
+	.gc-2\@xxl {grid-column: span 2;}
+	.gc-3\@xxl {grid-column: span 3;}
+	.gc-4\@xxl {grid-column: span 4;}
+	.gc-5\@xxl {grid-column: span 5;}
+	.gc-6\@xxl {grid-column: span 6;}
+}
+
+// alignment
+// -------------------------
+.items-start     { align-items: start; }
+.items-end       { align-items: end; }
+.items-center    { align-items: center; }
+.items-baseline  { align-items: baseline; }
+.items-stretch   { align-items: stretch; }
+
+.self-start      { align-self: start; }
+.self-end        { align-self: end; }
+.self-center     { align-self: center; }
+.self-baseline   { align-self: baseline; }
+.self-stretch    { align-self: stretch; }
+
+.justify-start   { justify-content: start; }
+.justify-end     { justify-content: end; }
+.justify-center  { justify-content: center; }
+.justify-between { justify-content: space-between; }
+.justify-around  { justify-content: space-around; }
+
+@include respond-min($m) {
+	.items-start\@m     { align-items: start; }
+	.items-end\@m       { align-items: end; }
+	.items-center\@m    { align-items: center; }
+	.items-baseline\@m  { align-items: baseline; }
+	.items-stretch\@m   { align-items: stretch; }
+	
+	.self-start\@m      { align-self: start; }
+	.self-end\@m        { align-self: end; }
+	.self-center\@m     { align-self: center; }
+	.self-baseline\@m   { align-self: baseline; }
+	.self-stretch\@m    { align-self: stretch; }
+	
+	.justify-start\@m   { justify-content: start; }
+	.justify-end\@m     { justify-content: end; }
+	.justify-center\@m  { justify-content: center; }
+	.justify-between\@m { justify-content: space-between; }
+	.justify-around\@m  { justify-content: space-around; }
+}
+@include respond-min($l) {
+	.items-start\@l     { align-items: start; }
+	.items-end\@l       { align-items: end; }
+	.items-center\@l    { align-items: center; }
+	.items-baseline\@l  { align-items: baseline; }
+	.items-stretch\@l   { align-items: stretch; }
+	
+	.self-start\@l      { align-self: start; }
+	.self-end\@l        { align-self: end; }
+	.self-center\@l     { align-self: center; }
+	.self-baseline\@l   { align-self: baseline; }
+	.self-stretch\@l    { align-self: stretch; }
+	
+	.justify-start\@l   { justify-content: start; }
+	.justify-end\@l     { justify-content: end; }
+	.justify-center\@l  { justify-content: center; }
+	.justify-between\@l { justify-content: space-between; }
+	.justify-around\@l  { justify-content: space-around; }
+}
+@include respond-min($xxl) {
+	.items-start\@xxl     { align-items: start; }
+	.items-end\@xxl       { align-items: end; }
+	.items-center\@xxl    { align-items: center; }
+	.items-baseline\@xxl  { align-items: baseline; }
+	.items-stretch\@xxl   { align-items: stretch; }
+	
+	.self-start\@xxl      { align-self: start; }
+	.self-end\@xxl        { align-self: end; }
+	.self-center\@xxl     { align-self: center; }
+	.self-baseline\@xxl   { align-self: baseline; }
+	.self-stretch\@xxl    { align-self: stretch; }
+	
+	.justify-start\@xxl   { justify-content: start; }
+	.justify-end\@xxl     { justify-content: end; }
+	.justify-center\@xxl  { justify-content: center; }
+	.justify-between\@xxl { justify-content: space-between; }
+	.justify-around\@xxl  { justify-content: space-around; }
+}
+
+// order
+// -------------------------
+.order-0 { order: 0; }
+.order-1 { order: 1; }
+.order-2 { order: 2; }
+.order-3 { order: 3; }
+.order-4 { order: 4; }
+.order-5 { order: 5; }
+.order-6 { order: 6; }
+.order-7 { order: 7; }
+.order-8 { order: 8; }
+.order-last { order: 99999; }
+
+@include respond-min($ml) {
+	.order-0\@ml { order: 0; }
+	.order-1\@ml { order: 1; }
+	.order-2\@ml { order: 2; }
+	.order-3\@ml { order: 3; }
+	.order-4\@ml { order: 4; }
+	.order-5\@ml { order: 5; }
+	.order-6\@ml { order: 6; }
+	.order-7\@ml { order: 7; }
+	.order-8\@ml { order: 8; }
+	.order-last\@ml { order: 99999; }
+}
+@include respond-min($l) {
+	.order-0\@l { order: 0; }
+	.order-1\@l { order: 1; }
+	.order-2\@l { order: 2; }
+	.order-3\@l { order: 3; }
+	.order-4\@l { order: 4; }
+	.order-5\@l { order: 5; }
+	.order-6\@l { order: 6; }
+	.order-7\@l { order: 7; }
+	.order-8\@l { order: 8; }
+	.order-last\@l { order: 99999; }
+}
+@include respond-min($xxxl) {
+	.order-0\@xxl { order: 0; }
+	.order-1\@xxl { order: 1; }
+	.order-2\@xxl { order: 2; }
+	.order-3\@xxl { order: 3; }
+	.order-4\@xxl { order: 4; }
+	.order-5\@xxl { order: 5; }
+	.order-6\@xxl { order: 6; }
+	.order-7\@xxl { order: 7; }
+	.order-8\@xxl { order: 8; }
+	.order-last\@xxl { order: 99999; }
+}
+
+
+
+
+/*-------------------
+       Tables
+--------------------*/
+
+// alignment
+// ----------------------------------------------------------------------
+.va-top {vertical-align: top !important;}
+.va-middle {vertical-align: middle !important;}
+.va-base {vertical-align: baseline !important;}
+.va-bottom {vertical-align: bottom !important;}
+
+
+
+
+/*-------------------
+     Seen or not
+--------------------*/
+
+// hidden
+// ----------------------------------------------------------------------
+.hidden\@sm  { @include respond-min($sm) { display: none; }}
+.hidden\@m   { @include respond-min($m) { display: none; }}
+.hidden\@ml  { @include respond-min($ml) { display: none; }}
+.hidden\@l   { @include respond-min($l) { display: none; }}
+.hidden\@xl  { @include respond-min($xl) { display: none; }}
+.hidden\@xxl { @include respond-min($xxxl) { display: none; }}
+
+.hidden-until\@sm  { @include respond-max($sm) { display: none; }}
+.hidden-until\@m   { @include respond-max($m) { display: none; }}
+.hidden-until\@ml  { @include respond-max($ml) { display: none; }}
+.hidden-until\@l   { @include respond-max($l) { display: none; }}
+.hidden-until\@xl  { @include respond-max($xl) { display: none; }}
+.hidden-until\@xxl { @include respond-max($xxxl) { display: none; }}
+
+// opacities
+// ----------------------------------------------------------------------
+.o-100 { opacity: 1;    }
+.o-95  { opacity: .95;  }
+.o-90  { opacity: .9;   }
+.o-85  { opacity: .85;  }
+.o-80  { opacity: .8;   }
+.o-75  { opacity: .75;  }
+.o-70  { opacity: .7;   }
+.o-60  { opacity: .6;   }
+.o-50  { opacity: .5;   }
+.o-40  { opacity: .4;   }
+.o-35  { opacity: .35;  }
+.o-30  { opacity: .3;   }
+.o-25  { opacity: .25;  }
+.o-20  { opacity: .2;   }
+.o-10  { opacity: .1;   }
+.o-05  { opacity: .05;  }
+.o-025 { opacity: .025; }
+.o-0   { opacity: 0;    }
+
+// visibility
+// ----------------------------------------------------------------------
+.v-visible { visibility: visible; }
+.v-hidden { visibility: hidden; }
+
+
+
+
+/*-------------------
+      Typography
+--------------------*/
+
+// font sizes
+// ----------------------------------------------------------------------
+.f12 {font-size: toRem(12px);}
+.f14 {font-size: toRem(14px);}
+.f16 {font-size: toRem(16px);}
+.f18 {font-size: toRem(18px);}
+.f20 {font-size: toRem(20px);}
+.f24 {font-size: toRem(24px);}
+.f28 {font-size: toRem(28px);}
+.f30 {font-size: toRem(30px);}
+.f32 {font-size: toRem(32px);}
+.f36 {font-size: toRem(36px);}
+.f38 {font-size: toRem(38px);}
+.f40 {font-size: toRem(40px);}
+.f48 {font-size: toRem(48px);}
+.f56 {font-size: toRem(56px);}
+.f60 {font-size: toRem(60px);}
+.f64 {font-size: toRem(64px);}
+.f72 {font-size: toRem(72px);}
+.f80 {font-size: toRem(80px);}
+.f96 {font-size: toRem(96px);}
+
+@include respond-min($sm) {
+    .f14\@sm {font-size: toRem(14px);}
+	.f16\@sm {font-size: toRem(16px);}
+	.f18\@sm {font-size: toRem(18px);}
+	.f20\@sm {font-size: toRem(20px);}
+	.f24\@sm {font-size: toRem(24px);}
+	.f28\@sm {font-size: toRem(28px);}
+	.f30\@sm {font-size: toRem(30px);}
+	.f32\@sm {font-size: toRem(32px);}
+	.f36\@sm {font-size: toRem(36px);}
+	.f38\@sm {font-size: toRem(38px);}
+	.f40\@sm {font-size: toRem(40px);}
+	.f48\@sm {font-size: toRem(48px);}
+	.f56\@sm {font-size: toRem(56px);}
+	.f60\@sm {font-size: toRem(60px);}
+	.f64\@sm {font-size: toRem(64px);}
+	.f72\@sm {font-size: toRem(72px);}
+	.f80\@sm {font-size: toRem(80px);}
+	.f96\@sm {font-size: toRem(96px);}
+}
+@include respond-max($sm) {
+    .f14-until\@sm {font-size: toRem(14px);}
+	.f16-until\@sm {font-size: toRem(16px);}
+	.f18-until\@sm {font-size: toRem(18px);}
+	.f20-until\@sm {font-size: toRem(20px);}
+	.f24-until\@sm {font-size: toRem(24px);}
+	.f28-until\@sm {font-size: toRem(28px);}
+	.f30-until\@sm {font-size: toRem(30px);}
+	.f32-until\@sm {font-size: toRem(32px);}
+	.f36-until\@sm {font-size: toRem(36px);}
+	.f38-until\@sm {font-size: toRem(38px);}
+	.f40-until\@sm {font-size: toRem(40px);}
+	.f48-until\@sm {font-size: toRem(48px);}
+	.f56-until\@sm {font-size: toRem(56px);}
+	.f60-until\@sm {font-size: toRem(60px);}
+	.f64-until\@sm {font-size: toRem(64px);}
+	.f72-until\@sm {font-size: toRem(72px);}
+	.f80-until\@sm {font-size: toRem(80px);}
+	.f96-until\@sm {font-size: toRem(96px);}
+}
+@include respond-min($ml) {
+    .f14\@ml {font-size: toRem(14px);}
+	.f16\@ml {font-size: toRem(16px);}
+	.f18\@ml {font-size: toRem(18px);}
+	.f20\@ml {font-size: toRem(20px);}
+	.f24\@ml {font-size: toRem(24px);}
+	.f28\@ml {font-size: toRem(28px);}
+	.f30\@ml {font-size: toRem(30px);}
+	.f32\@ml {font-size: toRem(32px);}
+	.f36\@ml {font-size: toRem(36px);}
+	.f38\@ml {font-size: toRem(38px);}
+	.f40\@ml {font-size: toRem(40px);}
+	.f48\@ml {font-size: toRem(48px);}
+	.f56\@ml {font-size: toRem(56px);}
+	.f60\@ml {font-size: toRem(60px);}
+	.f64\@ml {font-size: toRem(64px);}
+	.f72\@ml {font-size: toRem(72px);}
+	.f80\@ml {font-size: toRem(80px);}
+	.f96\@ml {font-size: toRem(96px);}
+}
+@include respond-max($ml) {
+    .f14-until\@ml {font-size: toRem(14px);}
+	.f16-until\@ml {font-size: toRem(16px);}
+	.f18-until\@ml {font-size: toRem(18px);}
+	.f20-until\@ml {font-size: toRem(20px);}
+	.f24-until\@ml {font-size: toRem(24px);}
+	.f28-until\@ml {font-size: toRem(28px);}
+	.f30-until\@ml {font-size: toRem(30px);}
+	.f32-until\@ml {font-size: toRem(32px);}
+	.f36-until\@ml {font-size: toRem(36px);}
+	.f38-until\@ml {font-size: toRem(38px);}
+	.f40-until\@ml {font-size: toRem(40px);}
+	.f48-until\@ml {font-size: toRem(48px);}
+	.f56-until\@ml {font-size: toRem(56px);}
+	.f60-until\@ml {font-size: toRem(60px);}
+	.f64-until\@ml {font-size: toRem(64px);}
+	.f72-until\@ml {font-size: toRem(72px);}
+	.f80-until\@ml {font-size: toRem(80px);}
+	.f96-until\@ml {font-size: toRem(96px);}
+}
+@include respond-min($l) {
+    .f14\@l {font-size: toRem(14px);}
+	.f16\@l {font-size: toRem(16px);}
+	.f18\@l {font-size: toRem(18px);}
+	.f20\@l {font-size: toRem(20px);}
+	.f24\@l {font-size: toRem(24px);}
+	.f28\@l {font-size: toRem(28px);}
+	.f30\@l {font-size: toRem(30px);}
+	.f32\@l {font-size: toRem(32px);}
+	.f36\@l {font-size: toRem(36px);}
+	.f38\@l {font-size: toRem(38px);}
+	.f40\@l {font-size: toRem(40px);}
+	.f48\@l {font-size: toRem(48px);}
+	.f56\@l {font-size: toRem(56px);}
+	.f60\@l {font-size: toRem(60px);}
+	.f64\@l {font-size: toRem(64px);}
+	.f72\@l {font-size: toRem(72px);}
+	.f80\@l {font-size: toRem(80px);}
+	.f96\@l {font-size: toRem(96px);}
+}
+@include respond-min($xxl) {
+    .f14\@xxl {font-size: toRem(14px);}
+	.f16\@xxl {font-size: toRem(16px);}
+	.f18\@xxl {font-size: toRem(18px);}
+	.f20\@xxl {font-size: toRem(20px);}
+	.f24\@xxl {font-size: toRem(24px);}
+	.f28\@xxl {font-size: toRem(28px);}
+	.f30\@xxl {font-size: toRem(30px);}
+	.f32\@xxl {font-size: toRem(32px);}
+	.f36\@xxl {font-size: toRem(36px);}
+	.f38\@xxl {font-size: toRem(38px);}
+	.f40\@xxl {font-size: toRem(40px);}
+	.f48\@xxl {font-size: toRem(48px);}
+	.f56\@xxl {font-size: toRem(56px);}
+	.f60\@xxl {font-size: toRem(60px);}
+	.f64\@xxl {font-size: toRem(64px);}
+	.f72\@xxl {font-size: toRem(72px);}
+	.f80\@xxl {font-size: toRem(80px);}
+	.f96\@xxl {font-size: toRem(96px);}
+}
+
+// line-heights
+// ----------------------------------------------------------------------
+.lh-none  { line-height: 0; }
+.lh-solid { line-height: $lh-solid; }
+.lh-title, .lh-title div { line-height: $lh-title; }
+.lh-copy  { line-height: $lh-copy; }
+
+@include respond-min($ml) {
+	.lh-none\@ml  { line-height: 0; }
+	.lh-solid\@ml { line-height: $lh-solid; }
+	.lh-title\@ml { line-height: $lh-title; }
+	.lh-copy\@ml  { line-height: $lh-copy; }
+}
+@include respond-min($l) {
+	.lh-none\@l  { line-height: 0; }
+	.lh-solid\@l { line-height: $lh-solid; }
+	.lh-title\@l { line-height: $lh-title; }
+	.lh-copy\@l  { line-height: $lh-copy; }
+}
+@include respond-min($xxxl) {
+	.lh-none\@xxl  { line-height: 0; }
+	.lh-solid\@xxl { line-height: $lh-solid; }
+	.lh-title\@xxl { line-height: $lh-title; }
+	.lh-copy\@xxl  { line-height: $lh-copy; }
+}
+
+// font colors
+// ----------------------------------------------------------------------
+.f-brand {color: $brand;}
+.f-brand-dark {color: $brand-dark;}
+.f-light {color: $light;}
+.f-dark {color: $dark;}
+.f-darker {color: $darker;}
+.f-grey-10 {color: $grey-10;}
+.f-grey-20 {color: $grey-20;}
+.f-grey-30 {color: $grey-30;}
+.f-grey-40 {color: $grey-40;}
+.f-grey-50 {color: $grey-50;}
+.f-grey-60 {color: $grey-60;}
+.f-grey-70 {color: $grey-70;}
+.f-grey-80 {color: $grey-80;} 
+.f-grey-90 {color: $grey-90;} 
+.f-grey-94 {color: $grey-94;} 
+
+// font weights
+// ----------------------------------------------------------------------
+.fw-normal {font-weight: normal;}
+.fw-b {font-weight: bold;}
+@for $i from 1 through 9 {
+	$weight: $i * 100;
+	.fw-#{$weight} {
+		font-weight: $weight;
+	}
+}
+
+// font style
+// ----------------------------------------------------------------------
+.fs-i {font-style: italic}
+.fs-u {text-transform: uppercase}
+
+// font families
+// ----------------------------------------------------------------------
+.sans       {font-family: $sans;}
+.serif      {font-family: $serif;}
+.mono       {font-family: $mono;}
+
+// letter spacings
+// ----------------------------------------------------------------------
+.ls-normal { letter-spacing: initial; }
+.ls-heading {letter-spacing: $ls-heading;}
+.ls-2 { letter-spacing: toRem(2px); }
+.ls-4 { letter-spacing: toRem(4px); }
+
+// word wraps
+// ----------------------------------------------------------------------
+.no-wrap {white-space: nowrap;}
+.wrap {white-space: normal;}
+.break-word {word-wrap: break-word;}
+
+
+
+/*-------------------
+      Text align
+--------------------*/
+
+.txt-l  { text-align: left; }
+.txt-r  { text-align: right; }
+.txt-c  { text-align: center; }
+.txt-j  { text-align: justify; }
+
+@include respond-min($m) {
+	.txt-l\@m  { text-align: left; }
+	.txt-r\@m  { text-align: right; }
+	.txt-c\@m  { text-align: center; }
+	.txt-j\@m  { text-align: justify; }
+}
+@include respond-min($ml) {
+	.txt-l\@ml  { text-align: left; }
+	.txt-r\@ml  { text-align: right; }
+	.txt-c\@ml  { text-align: center; }
+	.txt-j\@ml  { text-align: justify; }
+}
+@include respond-min($l) {
+	.txt-l\@l  { text-align: left; }
+	.txt-r\@l  { text-align: right; }
+	.txt-c\@l  { text-align: center; }
+	.txt-j\@l  { text-align: justify; }
+}
+@include respond-min($xxxl) {
+	.txt-l\@xxl  { text-align: left; }
+	.txt-r\@xxl  { text-align: right; }
+	.txt-c\@xxl  { text-align: center; }
+	.txt-j\@xxl  { text-align: justify; }
+}
+
+
+
+/*-------------------
+      SVG styles
+--------------------*/
+
+.svg-brand svg {fill: $brand;}
+.svg-dark  svg {fill: $dark;}
+.svg-light svg {fill: $light;}
+
+
+
+
+/*-------------------
+       Borders
+--------------------*/
+
+.bo-none {border: none;}
+
+.bo-a {border: 1px solid $grey-30;}
+.bo-h {border-right: 1px solid $grey-30; border-left: 1px solid $grey-30;}
+.bo-v {border-top: 1px solid $grey-30; border-bottom: 1px solid $grey-30;}
+.bo-t {border-top: 1px solid $grey-30;}
+.bo-b {border-bottom: 1px solid $grey-30;}
+.bo-l {border-left: 1px solid $grey-30;}
+.bo-r {border-right: 1px solid $grey-30;}
+ 
+.bo-a-light {border: 1px solid $light;}
+.bo-h-light {border-right: 1px solid $light; border-left: 1px solid $light;}
+.bo-v-light {border-top: 1px solid $light; border-bottom: 1px solid $light;}
+.bo-t-light {border-top: 1px solid $light;}
+.bo-b-light {border-bottom: 1px solid $light;}
+.bo-l-light {border-left: 1px solid $light;}
+.bo-r-light {border-right: 1px solid $light;}
+
+// radius
+// --------------------------------------------
+.br-none {border-radius: none;}
+.br-4    {border-radius: 4px;}
+.br-8    {border-radius: 8px;}
+.br-12   {border-radius: 12px;}
+.br-16   {border-radius: 16px;}
+.br-pill {border-radius: 100px;}
+.br-50ct {border-radius: 50%;}
+
+
+
+
+/*-------------------
+     Backgrounds
+--------------------*/
+
+// size
+// --------------------------------------------
+.bg-cover {	  @include bg(cover); }
+.bg-contain { @include bg(contain); }
+
+// fills
+// --------------------------------------------
+.bg-none    {background: none;}
+.bg-brand   {background-color: $brand;}
+.bg-dark    {background-color: $dark;}
+.bg-darker  {background-color: $darker;}
+.bg-light   {background-color: $light;}
+.bg-white   {background-color: $white;}
+
+.bg-grey-10 {background-color: $grey-10;}
+.bg-grey-20 {background-color: $grey-20;}
+.bg-grey-30 {background-color: $grey-30;}
+.bg-grey-40 {background-color: $grey-40;}
+.bg-grey-50 {background-color: $grey-50;}
+.bg-grey-60 {background-color: $grey-60;}
+.bg-grey-70 {background-color: $grey-70;}
+.bg-grey-80 {background-color: $grey-80;}
+.bg-grey-90 {background-color: $grey-90;}
+.bg-grey-94 {background-color: $grey-94;}

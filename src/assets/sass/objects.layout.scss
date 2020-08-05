@@ -1,0 +1,25 @@
+.container {
+    padding: 0 space(3);
+
+    @include respond-min($m) {
+        padding: 0 space(8);
+    }
+}
+
+.center {
+    @include center(flex);
+}
+
+.center-h {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    align-items: center;
+}
+
+.alt {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}

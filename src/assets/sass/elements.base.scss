@@ -1,0 +1,25 @@
+html,
+body {
+    background-color: $dark;
+    font-family: $sans;
+    font-size: 16px;
+    font-weight: normal;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    line-height: $lh-copy;
+    color: $light;
+
+    // @include scrollbar;
+}
+
+hr {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    clear: both;
+    display: block;
+    width: 100%;
+    background-color: rgba($light, 0.1);
+    height: 1px;
+}
