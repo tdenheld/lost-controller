@@ -1,7 +1,7 @@
 <template>
 	<div class="pb-8">
 		<h1 class="f40 mb-2">{{ $route.params.id | replace('-', ' ') }}</h1>
-		<component v-bind:is="scene"></component>
+		<component v-bind:is="scene" class="s-frame"></component>
 	</div>
 </template>
 
@@ -21,3 +21,12 @@
 		},
 	};
 </script>
+
+<style lang="scss" scoped>
+	@import '@/assets/sass/_settings-tools.scss';
+
+	.s-frame {
+		padding-bottom: 56.25%;
+		border: 1px solid $dark;
+	}
+</style>
