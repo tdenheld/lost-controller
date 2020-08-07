@@ -1,7 +1,9 @@
 <template>
 	<div class="pb-8">
 		<h1 class="f40 mb-2">{{ $route.params.id | replace('-', ' ') }}</h1>
-		<component v-bind:is="scene" class="s-frame"></component>
+		<div class="s-frame">
+            <component v-bind:is="scene" class="full-absolute"></component>
+        </div>
 	</div>
 </template>
 
