@@ -2,7 +2,7 @@
 	<div>
 		<div>
 			<img
-				v-for="index in 16"
+				v-for="index in 48"
 				:key="'lost' + index"
 				src="@/assets/img/lost.png"
 				alt="lost"
@@ -26,6 +26,7 @@
 
 <script>
 	import gsap from 'gsap';
+    
 	export default {
 		methods: {
 			timeline() {
@@ -51,6 +52,7 @@
                     },{
                         stagger: 0.01,
                         yoyo: true,
+                        duration: 0.6,
                         repeat: -1,
                         x: 0,
                     });

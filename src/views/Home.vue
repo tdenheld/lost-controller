@@ -8,7 +8,7 @@
 		<h3 class="fw-b">scenes</h3>
 		<hr class="mb-3" />
 		<div class="mb-1">
-			<div v-for="index in 2" :key="index">
+			<div v-for="index in 3" :key="index">
                 <router-link :to="{path: '/scenes/scene-' + index}">scene {{ index }}</router-link>
             </div>
 		</div>

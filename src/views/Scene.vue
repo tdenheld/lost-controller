@@ -10,11 +10,13 @@
 <script>
     import Scene1 from '@/components/Scene1.vue';
     import Scene2 from '@/components/Scene2.vue';
+    import Scene3 from '@/components/Scene3.vue';
 
 	export default {
 		components: {
             Scene1,
-            Scene2
+            Scene2,
+            Scene3
 		},
 		computed: {
 			scene() {
@@ -31,7 +33,6 @@
 
 	.s-frame {
         position: relative;
-        // height: 51.3vw; // represents 16:9
         padding-bottom: 56.25%;
         overflow: hidden;
         border: 1px solid $dark;
