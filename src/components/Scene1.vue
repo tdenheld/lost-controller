@@ -9,7 +9,7 @@
 				const vm = this;
 
 				[7, 0.9, 0.8, 0.5, 0.1].forEach((i) => {
-					const j = (1 - i) * 400;
+					const j = (1 - i) * 8;
 					const elem = document.createElement('div');
 					elem.className = 'trail';
 
