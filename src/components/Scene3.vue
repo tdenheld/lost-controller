@@ -6,11 +6,17 @@
 				:key="'lost' + index"
 				src="@/assets/img/lost.png"
 				alt="lost"
-				class="img s-lost"
+				class="img s-lost-2"
 			/>
 		</div>
 		<div>
-			<img v-for="index in 36" :key="'my' + index" src="@/assets/img/my.png" alt="my" class="img s-my" />
+			<img
+				v-for="index in 36"
+				:key="'my' + index"
+				src="@/assets/img/my.png"
+				alt="my"
+				class="img s-my-2"
+			/>
 		</div>
 		<div>
 			<img
@@ -18,7 +24,7 @@
 				:key="'controller' + index"
 				src="@/assets/img/controller.png"
 				alt="controller"
-				class="img s-controller"
+				class="img s-controller-2"
 			/>
 		</div>
 	</div>
@@ -38,9 +44,9 @@
 						},
 					})
 					.fromTo(
-						'.s-controller',
+						'.s-controller-2',
 						{
-							y: 500,
+							y: 880,
 						},
 						{
 							y: 0,
@@ -50,10 +56,10 @@
 						}
 					)
 					.fromTo(
-						'.s-my',
+						'.s-my-2',
 						{
 							y: 'random(-100, 100)',
-                            scale: 0.2
+							scale: 0.2,
 						},
 						{
 							stagger: 0.04,
@@ -61,21 +67,21 @@
 							duration: 0.06,
 							repeat: -1,
 							y: 0,
-                            scale: 1
+							scale: 1,
 						}
 					);
 
 				const lost = () => {
-					if (!document.body.contains(document.querySelector('.s-lost')))
+					if (!document.body.contains(document.querySelector('.s-lost-2')))
 						return;
 					gsap.fromTo(
-						'.s-lost',
+						'.s-lost-2',
 						{
 							opacity: 0,
 						},
 						{
-                            opacity: 1,
-                            scaleY: 'random(0.008, 1.5)',
+							opacity: 1,
+							scaleY: 'random(0.008, 1.5)',
 							duration: 'random(0.008, 1.5)',
 							ease: 'power4.out',
 							stagger: 0.01,
@@ -97,16 +103,16 @@
 </script>
 
 <style lang="scss" scoped>
-    @import '@/assets/sass/_settings-tools.scss';
+	@import '@/assets/sass/_settings-tools.scss';
 
-    .s-my {
-        width: 70%;
-        top: 20%;
-        right: 10%;
-    }
-    
-    .s-lost {
-        bottom: 0;
-        right: 0;
-    }
+	.s-my-2 {
+		width: 70%;
+		top: 20%;
+		right: 10%;
+	}
+
+	.s-lost-2 {
+		bottom: 0;
+		right: 0;
+	}
 </style>
