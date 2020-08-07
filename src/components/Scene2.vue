@@ -38,7 +38,7 @@
 					})
 					.fromTo('.s-controller', {
                         opacity: 0,
-                        y: 30,
+                        y: 40,
                     },{
                         y: 0,
                         stagger: 0.02,
@@ -55,7 +55,8 @@
                         x: 0,
                     });
 
-				const lost = () => { 
+				const lost = () => {
+                    if (!document.body.contains(document.querySelector('.s-lost'))) return;
                     gsap.fromTo('.s-lost', {
                         opacity: 0,
                     },{
