@@ -6,11 +6,13 @@
 </template>
 
 <script>
-	import Scene1 from '@/components/Scene1.vue';
+    import Scene1 from '@/components/Scene1.vue';
+    import Scene2 from '@/components/Scene2.vue';
 
 	export default {
 		components: {
-			Scene1,
+            Scene1,
+            Scene2
 		},
 		computed: {
 			scene() {
@@ -26,7 +28,10 @@
 	@import '@/assets/sass/_settings-tools.scss';
 
 	.s-frame {
-		padding-bottom: 56.25%;
-		border: 1px solid $dark;
+        position: relative;
+        // height: 51.3vw; // represents 16:9
+        padding-bottom: 56.25%;
+        overflow: hidden;
+        border: 1px solid $dark;
 	}
 </style>
