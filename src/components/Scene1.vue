@@ -8,37 +8,39 @@
 			trail(e) {
 				const vm = this;
 
-				[1, 0.9, 0.8, 0.5, 0.1, 5].forEach((i) => {
+				[7, 0.9, 0.8, 0.5, 0.1].forEach((i) => {
 					const j = (1 - i) * 400;
 					const elem = document.createElement('div');
-                    elem.className = 'trail';
+					elem.className = 'trail';
 
-                    setTimeout(() => {
-                        elem.classList.add('is-controller');
-                    }, 333);
-                    setTimeout(() => {
-                        elem.classList.add('is-my');
-                    }, 667);
+					setTimeout(() => {
+						elem.classList.add('is-controller');
+					}, 333);
+					setTimeout(() => {
+						elem.classList.add('is-my');
+					}, 667);
 
 					elem.style.top =
 						e.pageY + Math.round(Math.random() * j - j / 2) + 'px';
 
 					elem.style.left =
-                        e.pageX + Math.round(Math.random() * j - j / 2) + 'px';
+						e.pageX + Math.round(Math.random() * j - j / 2) + 'px';
 
 					vm.$refs.frame.appendChild(elem);
 
 					setTimeout(() => {
-						vm.$refs.frame.removeChild(elem);
+						if (document.body.contains(vm.$refs.frame)) {
+							vm.$refs.frame.removeChild(elem);
+						}
 					}, Math.round(Math.random() * i * 1000));
 				});
 			},
 		},
 		created() {
-            window.addEventListener('mousemove', this.trail);
+			window.addEventListener('mousemove', this.trail);
 		},
 		destroyed() {
-            window.removeEventListener('mousemove', this.trail);
+			window.removeEventListener('mousemove', this.trail);
 		},
 	};
 </script>
@@ -49,8 +51,8 @@
 	.trail {
 		position: absolute;
 		width: 8%;
-        height: 8%;
-        pointer-events: none;
+		height: 8%;
+		pointer-events: none;
 
 		&:after {
 			content: '';
@@ -62,22 +64,22 @@
 			background-image: url('../assets/img/lost.png');
 			background-repeat: no-repeat;
 			background-size: contain;
-        }
-        
-        &.is-controller {
-            width: 18%;
+		}
 
-            &:after {
-                background-image: url('../assets/img/controller.png');
-            }
-        }
+		&.is-controller {
+			width: 18%;
 
-        &.is-my {
-            width: 7%;
+			&:after {
+				background-image: url('../assets/img/controller.png');
+			}
+		}
 
-            &:after {
-                background-image: url('../assets/img/my.png');
-            }
-        }
+		&.is-my {
+			width: 7%;
+
+			&:after {
+				background-image: url('../assets/img/my.png');
+			}
+		}
 	}
 </style>
