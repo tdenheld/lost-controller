@@ -1,24 +1,46 @@
 <template>
-	<div ref="frame" style="cursor: none"></div>
+	<div>
+		<div class="center-h gap-2 mb-2">
+			<div>
+				<label for="scatterTrail" class="db f12">scatter trail (px: 0 - 999)</label>
+				<input type="number" v-model="scatterTrail" class="input mxw-150" id="scatterTrail" />
+			</div>
+			<div>
+				<label for="timeAfter" class="db f12">time after (ms: 0 - 99999)</label>
+				<input type="number" v-model="timeAfter" class="input mxw-150" id="timeAfter" />
+			</div>
+		</div>
+		<div class="s-frame" style="cursor: none">
+			<div class="full-absolute">
+				<div ref="frame"></div>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>
 	export default {
+		data() {
+			return {
+                scatterTrail: 8,
+                timeAfter: 100
+			};
+		},
 		methods: {
 			trail(e) {
 				const vm = this;
 
 				[7, 0.9, 0.8, 0.5, 0.1].forEach((i) => {
-					const j = (1 - i) * 8;
+					const j = (1 - i) * this.scatterTrail;
 					const elem = document.createElement('div');
 					elem.className = 'trail';
 
 					setTimeout(() => {
 						elem.classList.add('is-controller');
-					}, 333);
+					}, (this.timeAfter * 0.5 + 200));
 					setTimeout(() => {
 						elem.classList.add('is-my');
-					}, 667);
+					}, (this.timeAfter * 0.35 + 500));
 
 					elem.style.top =
 						e.pageY + Math.round(Math.random() * j - j / 2) + 'px';
@@ -32,7 +54,7 @@
 						if (document.body.contains(vm.$refs.frame)) {
 							vm.$refs.frame.removeChild(elem);
 						}
-					}, Math.round(Math.random() * i * 1000));
+					}, Math.round(Math.random() * i * this.timeAfter) + 500);
 				});
 			},
 		},
@@ -80,6 +102,38 @@
 			&:after {
 				background-image: url('../assets/img/my.png');
 			}
+		}
+	}
+
+	@keyframes bg-color {
+		0% {
+			background-color: $white;
+		}
+		5% {
+			background-color: $dark;
+		}
+		10% {
+			background-color: $white;
+		}
+		15% {
+			background-color: $dark;
+		}
+		80% {
+			background-color: $white;
+		}
+		90% {
+			background-color: $dark;
+		}
+	}
+
+	.s-frame {
+		position: relative;
+		padding-bottom: 56.25%;
+		overflow: hidden;
+		border: 1px solid $dark;
+
+		&.is-flickering {
+			animation: bg-color 500ms $ease-out infinite both;
 		}
 	}
 </style>

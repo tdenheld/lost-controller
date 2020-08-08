@@ -1,31 +1,33 @@
 <template>
-	<div>
-		<div>
-			<img
-				v-for="index in 48"
-				:key="'lost' + index"
-				src="@/assets/img/lost.png"
-				alt="lost"
-				class="img s-lost-2"
-			/>
-		</div>
-		<div>
-			<img
-				v-for="index in 36"
-				:key="'my' + index"
-				src="@/assets/img/my.png"
-				alt="my"
-				class="img s-my-2"
-			/>
-		</div>
-		<div>
-			<img
-				v-for="index in 16"
-				:key="'controller' + index"
-				src="@/assets/img/controller.png"
-				alt="controller"
-				class="img s-controller-2"
-			/>
+	<div class="s-frame">
+		<div class="full-absolute">
+			<div>
+				<img
+					v-for="index in 48"
+					:key="'lost' + index"
+					src="@/assets/img/lost.png"
+					alt="lost"
+					class="img s-lost-2"
+				/>
+			</div>
+			<div>
+				<img
+					v-for="index in 36"
+					:key="'my' + index"
+					src="@/assets/img/my.png"
+					alt="my"
+					class="img s-my-2"
+				/>
+			</div>
+			<div>
+				<img
+					v-for="index in 16"
+					:key="'controller' + index"
+					src="@/assets/img/controller.png"
+					alt="controller"
+					class="img s-controller-2"
+				/>
+			</div>
 		</div>
 	</div>
 </template>
@@ -72,7 +74,9 @@
 					);
 
 				const lost = () => {
-					if (!document.body.contains(document.querySelector('.s-lost-2')))
+					if (
+						!document.body.contains(document.querySelector('.s-lost-2'))
+					)
 						return;
 					gsap.fromTo(
 						'.s-lost-2',
