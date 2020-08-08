@@ -66,6 +66,6 @@
 		padding-bottom: 56.25%;
 		overflow: hidden;
 		border: 1px solid $dark;
-		animation: bg-color 500ms $ease-out infinite both;
+		// animation: bg-color 500ms $ease-out infinite both;
 	}
 </style>
