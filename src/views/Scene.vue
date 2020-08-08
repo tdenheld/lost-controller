@@ -55,10 +55,6 @@
 		90% {
 			background-color: $dark;
 		}
-
-		100% {
-			background-color: $white;
-		}
 	}
 
 	.s-frame {
