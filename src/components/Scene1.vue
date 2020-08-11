@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="center-h gap-2 mb-2">
+		<div class="g g-af-c gap-2 items-end mb-2">
 			<div>
 				<label for="scatterTrail" class="db f12">scatter trail (px: 0 - 999)</label>
 				<input type="number" v-model="scatterTrail" class="input mxw-150" id="scatterTrail" />
@@ -9,8 +9,14 @@
 				<label for="timeAfter" class="db f12">time after (ms: 0 - 99999)</label>
 				<input type="number" v-model="timeAfter" class="input mxw-150" id="timeAfter" />
 			</div>
+
+			<button
+				class="button"
+				@click="bgActive = !bgActive"
+				:class="{'is-active': bgActive}"
+			>toggle background</button>
 		</div>
-		<div class="s-frame" style="cursor: none">
+		<div class="s-frame" :class="{'is-flickering': bgActive}" style="cursor: none">
 			<div class="full-absolute">
 				<div ref="frame"></div>
 			</div>
@@ -22,8 +28,9 @@
 	export default {
 		data() {
 			return {
-                scatterTrail: 8,
-                timeAfter: 100
+				scatterTrail: 8,
+				timeAfter: 100,
+				bgActive: false,
 			};
 		},
 		methods: {
@@ -37,10 +44,10 @@
 
 					setTimeout(() => {
 						elem.classList.add('is-controller');
-					}, (this.timeAfter * 0.5 + 200));
+					}, this.timeAfter * 0.5 + 200);
 					setTimeout(() => {
 						elem.classList.add('is-my');
-					}, (this.timeAfter * 0.35 + 500));
+					}, this.timeAfter * 0.35 + 500);
 
 					elem.style.top =
 						e.pageY + Math.round(Math.random() * j - j / 2) + 'px';
