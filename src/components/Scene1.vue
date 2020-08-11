@@ -14,7 +14,7 @@
 				class="button"
 				@click="bgActive = !bgActive"
 				:class="{'is-active': bgActive}"
-			>toggle background</button>
+			>flickering background</button>
 		</div>
 		<div class="s-frame" :class="{'is-flickering': bgActive}" style="cursor: none">
 			<div class="full-absolute">
