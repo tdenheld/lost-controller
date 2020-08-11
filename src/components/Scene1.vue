@@ -43,11 +43,14 @@
 					elem.className = 'trail';
 
 					setTimeout(() => {
-						elem.classList.add('is-controller');
+						elem.classList.add('is-lost');
 					}, this.timeAfter * 0.5 + 200);
 					setTimeout(() => {
+						elem.classList.add('is-controller');
+                    }, this.timeAfter * 0.35 + 500);
+                    setTimeout(() => {
 						elem.classList.add('is-my');
-					}, this.timeAfter * 0.35 + 500);
+					}, this.timeAfter * 0.25 + 800);
 
 					elem.style.top =
 						e.pageY + Math.round(Math.random() * j - j / 2) + 'px';
@@ -79,7 +82,7 @@
 
 	.trail {
 		position: absolute;
-		width: 8%;
+		width: 18%;
 		height: 8%;
 		pointer-events: none;
 
@@ -90,9 +93,17 @@
 			height: 100%;
 			top: -220px;
 			left: -60px;
-			background-image: url('../assets/img/lost.png');
+			background-image: url('../assets/img/lost-controller.gif');
 			background-repeat: no-repeat;
 			background-size: contain;
+        }
+        
+        &.is-lost {
+			width: 8%;
+
+			&:after {
+				background-image: url('../assets/img/lost.png');
+			}
 		}
 
 		&.is-controller {
