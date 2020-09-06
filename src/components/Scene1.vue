@@ -3,11 +3,11 @@
 		<div class="g g-af-c@m gap-2 items-end mb-2">
 			<div>
 				<label for="scatterTrail" class="db f12">scatter trail (px: 0 - 999)</label>
-				<input type="number" v-model="scatterTrail" class="input mxw-100" id="scatterTrail" />
+				<input type="number" v-model="scatterTrail" class="input mxw-150" id="scatterTrail" />
 			</div>
 			<div>
 				<label for="timeAfter" class="db f12">time after (ms: 0 - 99999)</label>
-				<input type="number" v-model="timeAfter" class="input mxw-100" id="timeAfter" />
+				<input type="number" v-model="timeAfter" class="input mxw-150" id="timeAfter" />
 			</div>
 
 			<button

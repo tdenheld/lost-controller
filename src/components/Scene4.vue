@@ -3,11 +3,11 @@
 		<div class="g g-af-c@m gap-2 items-end mb-2">
 			<div>
 				<label for="scale" class="db f12">scale random (%)</label>
-				<input type="number" v-model="scale" class="input mxw-100" id="scale" />
+				<input type="number" v-model="scale" class="input mxw-150" id="scale" />
 			</div>
 			<div>
 				<label for="time" class="db f12">time random (sec)</label>
-				<input type="number" v-model="time" class="input mxw-100" id="time" @change="initTimeline()" />
+				<input type="number" v-model="time" class="input mxw-150" id="time" @change="initTimeline()" />
 			</div>
 			<button
 				class="button"
