@@ -16,7 +16,7 @@
 				:class="{'is-active': bgActive}"
 			>flickering background</button>
 		</div>
-		<div class="s-frame" :class="{'is-flickering': bgActive}" style="cursor: none">
+		<div class="frame" :class="{'is-flickering': bgActive}" style="cursor: none">
 			<div class="full-absolute">
 				<div ref="frame"></div>
 			</div>
@@ -40,7 +40,7 @@
 				[7, 0.9, 0.8, 0.5, 0.1].forEach((i) => {
 					const j = (1 - i) * this.scatterTrail;
 					const elem = document.createElement('div');
-					elem.className = 'trail';
+					elem.className = 's-trail';
 
 					setTimeout(() => {
 						elem.classList.add('is-lost');
@@ -77,10 +77,10 @@
 	};
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	@import '@/assets/sass/_settings-tools.scss';
 
-	.trail {
+	.s-trail {
 		position: absolute;
 		width: 18%;
 		height: 8%;
@@ -120,38 +120,6 @@
 			&:after {
 				background-image: url('../assets/img/my.png');
 			}
-		}
-	}
-
-	@keyframes bg-color {
-		0% {
-			background-color: $white;
-		}
-		5% {
-			background-color: $dark;
-		}
-		10% {
-			background-color: $white;
-		}
-		15% {
-			background-color: $dark;
-		}
-		80% {
-			background-color: $white;
-		}
-		90% {
-			background-color: $dark;
-		}
-	}
-
-	.s-frame {
-		position: relative;
-		padding-bottom: 56.25%;
-		overflow: hidden;
-		border: 1px solid $dark;
-
-		&.is-flickering {
-			animation: bg-color 500ms $ease-out infinite both;
 		}
 	}
 </style>

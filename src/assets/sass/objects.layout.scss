@@ -23,38 +23,3 @@
     opacity: 0;
     pointer-events: none;
 }
-
-.img {
-    position: absolute;
-    height: 5%;
-}
-
-.input {
-    height: 36px;
-    padding: space(1);
-    border: 1px solid $dark;
-    font-weight: bold;
-
-    &:focus {
-        box-shadow: 0 0 0 1px $dark;
-    }
-}
-
-.button,
-.button:hover,
-.button:focus {
-    height: 36px;
-    padding: space(1) space(2);
-    border: 1px solid $dark;
-    font-weight: bold;
-
-    &:hover,
-    &:focus {
-        box-shadow: 0 0 0 1px $dark;
-    }
-
-    &.is-active {
-        background-color: $dark;
-        color: $white;
-    }
-}

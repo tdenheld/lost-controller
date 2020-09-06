@@ -7,7 +7,7 @@
 				:class="{'is-active': bgActive}"
 			>flickering background</button>
 		</div>
-		<div class="s-frame" :class="{'is-flickering': bgActive}">
+		<div class="frame" :class="{'is-flickering': bgActive}">
 			<div class="full-absolute">
 				<div>
 					<img
@@ -15,7 +15,7 @@
 						:key="'lost' + index"
 						src="@/assets/img/lost.png"
 						alt="lost"
-						class="img s-lost-2"
+						class="img s-lost"
 					/>
 				</div>
 				<div>
@@ -24,7 +24,7 @@
 						:key="'my' + index"
 						src="@/assets/img/my.png"
 						alt="my"
-						class="img s-my-2"
+						class="img s-my"
 					/>
 				</div>
 				<div>
@@ -33,7 +33,7 @@
 						:key="'controller' + index"
 						src="@/assets/img/controller.png"
 						alt="controller"
-						class="img s-controller-2"
+						class="img s-controller"
 					/>
 				</div>
 			</div>
@@ -60,7 +60,7 @@
 						},
 					})
 					.fromTo(
-						'.s-controller-2',
+						'.s-controller',
 						{
 							y: 880,
 						},
@@ -72,7 +72,7 @@
 						}
 					)
 					.fromTo(
-						'.s-my-2',
+						'.s-my',
 						{
 							y: 'random(-100, 100)',
 							scale: 0.2,
@@ -89,11 +89,11 @@
 
 				const lost = () => {
 					if (
-						!document.body.contains(document.querySelector('.s-lost-2'))
+						!document.body.contains(document.querySelector('.s-lost'))
 					)
 						return;
 					gsap.fromTo(
-						'.s-lost-2',
+						'.s-lost',
 						{
 							opacity: 0,
 						},
@@ -123,13 +123,13 @@
 <style lang="scss" scoped>
 	@import '@/assets/sass/_settings-tools.scss';
 
-	.s-my-2 {
+	.s-my {
 		width: 70%;
 		top: 20%;
 		right: 10%;
 	}
 
-	.s-lost-2 {
+	.s-lost {
 		bottom: 0;
 		right: 0;
 	}

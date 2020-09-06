@@ -1,0 +1,71 @@
+.img {
+    position: absolute;
+    height: 5%;
+}
+
+.input {
+    height: 36px;
+    padding: space(1);
+    border: 1px solid $dark;
+    font-weight: bold;
+
+    &:focus {
+        box-shadow: 0 0 0 1px $dark;
+    }
+}
+
+.button,
+.button:hover,
+.button:focus {
+    height: 36px;
+    padding: space(1) space(2);
+    border: 1px solid $dark;
+    font-weight: bold;
+
+    &:hover,
+    &:focus {
+        box-shadow: 0 0 0 1px $dark;
+    }
+
+    &.is-active {
+        background-color: $dark;
+        color: $white;
+    }
+}
+
+.frame {
+    @keyframes bg-color-flicker {
+        0% {
+            background-color: $white;
+        }
+
+        5% {
+            background-color: $dark;
+        }
+
+        10% {
+            background-color: $white;
+        }
+
+        15% {
+            background-color: $dark;
+        }
+
+        80% {
+            background-color: $white;
+        }
+
+        90% {
+            background-color: $dark;
+        }
+    }
+
+    position: relative;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    border: 1px solid $dark;
+
+    &.is-flickering {
+        animation: bg-color-flicker 500ms $ease-out infinite both;
+    }
+}

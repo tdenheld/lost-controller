@@ -7,7 +7,7 @@
 				:class="{'is-active': bgActive}"
 			>flickering background</button>
 		</div>
-		<div class="s-frame" :class="{'is-flickering': bgActive}">
+		<div class="frame" :class="{'is-flickering': bgActive}">
 			<div class="full-absolute">
 				<div>
 					<img
