@@ -9,12 +9,14 @@
 	import Scene1 from '@/components/Scene1.vue';
 	import Scene2 from '@/components/Scene2.vue';
 	import Scene3 from '@/components/Scene3.vue';
+    import Scene4 from '@/components/Scene4.vue';
 
 	export default {
 		components: {
 			Scene1,
 			Scene2,
 			Scene3,
+            Scene4,
 		},
 		computed: {
 			scene() {
