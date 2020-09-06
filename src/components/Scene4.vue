@@ -77,16 +77,16 @@
 					obj,
 					{
 						opacity: 0,
-						x: 'random(0, 100)vw',
-						y: 'random(0, 100)vh',
+						x: 'random(0, 90)vw',
+						y: 'random(0, 90)vh',
 					},
 					{
 						opacity: 1,
 						duration: `random(0.2, ${time})`,
 						ease: 'elastic.inOut',
 						stagger: 0.01,
-						x: 'random(0, 100)vw',
-						y: 'random(0, 100)vh',
+						x: 'random(0, 90)vw',
+						y: 'random(0, 90)vh',
 						yoyo: true,
 						repeat: -1,
 					}
