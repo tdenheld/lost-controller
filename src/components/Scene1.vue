@@ -40,7 +40,7 @@
 				[7, 0.9, 0.8, 0.5, 0.1].forEach((i) => {
 					const j = (1 - i) * this.scatterTrail;
 					const elem = document.createElement('div');
-					elem.className = 's-trail';
+					elem.className = 'trail';
 
 					setTimeout(() => {
 						elem.classList.add('is-lost');
@@ -77,10 +77,10 @@
 	};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	@import '@/assets/sass/_settings-tools.scss';
 
-	.s-trail {
+	.trail {
 		position: absolute;
 		width: 18%;
 		height: 8%;
