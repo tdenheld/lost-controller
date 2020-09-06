@@ -3,11 +3,16 @@
 		<div class="g g-af-c gap-2 items-end mb-2">
 			<button
 				class="button"
-				@click="bgActive = !bgActive"
-				:class="{'is-active': bgActive}"
+				@click="bg.dark = !bg.dark"
+				:class="{'is-active': bg.dark}"
+			>dark background</button>
+			<button
+				class="button"
+				@click="bg.flickering = !bg.flickering"
+				:class="{'is-active': bg.flickering}"
 			>flickering background</button>
 		</div>
-		<div class="frame" :class="{'is-flickering': bgActive}">
+		<div class="frame" :class="{'is-dark': bg.dark, 'is-flickering': bg.flickering}">
 			<div class="full-absolute">
 				<div>
 					<img
@@ -47,7 +52,10 @@
 	export default {
 		data() {
 			return {
-				bgActive: false,
+				bg: {
+					dark: false,
+					flickering: false,
+				},
 			};
 		},
 		methods: {

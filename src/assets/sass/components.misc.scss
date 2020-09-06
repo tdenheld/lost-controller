@@ -68,4 +68,8 @@
     &.is-flickering {
         animation: bg-color-flicker 500ms $ease-out infinite both;
     }
+
+    &.is-dark {
+        background-color: $dark;
+    }
 }

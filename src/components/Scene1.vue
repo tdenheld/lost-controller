@@ -12,11 +12,16 @@
 
 			<button
 				class="button"
-				@click="bgActive = !bgActive"
-				:class="{'is-active': bgActive}"
+				@click="bg.dark = !bg.dark"
+				:class="{'is-active': bg.dark}"
+			>dark background</button>
+			<button
+				class="button"
+				@click="bg.flickering = !bg.flickering"
+				:class="{'is-active': bg.flickering}"
 			>flickering background</button>
 		</div>
-		<div class="frame" :class="{'is-flickering': bgActive}" style="cursor: none">
+		<div class="frame" :class="{'is-dark': bg.dark, 'is-flickering': bg.flickering}" style="cursor: none">
 			<div class="full-absolute">
 				<div ref="frame"></div>
 			</div>
@@ -30,7 +35,10 @@
 			return {
 				scatterTrail: 8,
 				timeAfter: 100,
-				bgActive: false,
+				bg: {
+					dark: false,
+					flickering: false,
+				},
 			};
 		},
 		methods: {
