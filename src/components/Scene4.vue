@@ -1,13 +1,13 @@
 <template>
 	<div>
-		<div class="g g-af-c gap-2 items-end mb-2">
+		<div class="g g-af-c@m gap-2 items-end mb-2">
 			<div>
 				<label for="scale" class="db f12">scale random (%)</label>
-				<input type="number" v-model="scale" class="input mxw-150" id="scale" />
+				<input type="number" v-model="scale" class="input mxw-100" id="scale" />
 			</div>
 			<div>
 				<label for="time" class="db f12">time random (sec)</label>
-				<input type="number" v-model="time" class="input mxw-150" id="time" @change="initTimeline()" />
+				<input type="number" v-model="time" class="input mxw-100" id="time" @change="initTimeline()" />
 			</div>
 			<button
 				class="button"
@@ -77,16 +77,16 @@
 					obj,
 					{
 						opacity: 0,
-						x: 'random(0, 1800)',
-						y: 'random(0, 1400)',
+						x: 'random(0, 100)vw',
+						y: 'random(0, 100)vh',
 					},
 					{
 						opacity: 1,
 						duration: `random(0.2, ${time})`,
 						ease: 'elastic.inOut',
 						stagger: 0.01,
-						x: 'random(0, 1800)',
-						y: 'random(0, 1400)',
+						x: 'random(0, 100)vw',
+						y: 'random(0, 100)vh',
 						yoyo: true,
 						repeat: -1,
 					}

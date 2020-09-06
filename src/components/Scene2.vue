@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="g g-af-c gap-2 items-end mb-2">
+		<div class="g g-af-c@m gap-2 items-end mb-2">
 			<button
 				class="button"
 				@click="bg.dark = !bg.dark"
@@ -109,8 +109,8 @@
 							duration: 0.4,
 							ease: 'power4.out',
 							stagger: 0.05,
-							x: 'random(-700, 700)',
-							y: 'random(-500, 500)',
+							x: 'random(-50, 50)vw',
+							y: 'random(-50, 50)vh',
 							onComplete() {
 								lost();
 							},

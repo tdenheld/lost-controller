@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="g g-af-c gap-2 items-end mb-2">
+		<div class="g g-af-c@m gap-2 items-end mb-2">
 			<button
 				class="button"
 				@click="bg.dark = !bg.dark"
@@ -70,7 +70,7 @@
 					.fromTo(
 						'.s-controller',
 						{
-							y: 880,
+							y: '80vh',
 						},
 						{
 							y: 0,
@@ -109,8 +109,8 @@
 							duration: 'random(0.008, 1.5)',
 							ease: 'power4.out',
 							stagger: 0.01,
-							x: 'random(-1800, 0)',
-							y: 'random(-1400, 0)',
+							x: 'random(-100, 0)vw',
+							y: 'random(-100, 0)vh',
 							onComplete() {
 								lost();
 							},
