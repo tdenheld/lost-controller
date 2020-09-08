@@ -18,7 +18,8 @@
 .button:hover,
 .button:focus {
     height: 36px;
-    padding: space(1) space(2);
+    padding: 0 space(2);
+    line-height: 0;
     border: 1px solid $dark;
     font-weight: bold;
 

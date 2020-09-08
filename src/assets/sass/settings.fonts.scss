@@ -1,0 +1,19 @@
+/*
+
+@name Fonts
+@description Fonts
+@section Basics
+@type UI
+@extended false
+
+*/
+
+$font-path: ('assets/fonts');
+
+@font-face {
+    font-family: 'sans';
+    src: url('#{$font-path}/sans.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
