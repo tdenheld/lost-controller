@@ -1,16 +1,75 @@
 <template>
 	<div>
 		<header class="pv-8">
-			<h1 class="f40 f80@ml fw-b lh-solid ls-heading">freek fabricius</h1>
-			<h2 class="f20 f40@ml lh-title ls-heading">lost my controller</h2>
+			<h1 class="s-h1 mb-1">freek fabricius</h1>
+			<h2 class="s-h2">lost my controller</h2>
 		</header>
 
-		<h3 class="fw-b">album cover animations</h3>
-		<hr class="mb-3" />
+		<h3 class="s-h3 mb-4px">album cover animation generator</h3>
+		<hr class="mb-3 mb-6@m" />
 		<div class="mb-1">
-			<div v-for="index in 4" :key="index">
-                <router-link :to="{path: '/scenes/scene-' + index}">scene {{ index }}</router-link>
-            </div>
+			<div v-for="index in 4" :key="index" class="mb-1">
+				<router-link :to="{path: '/scenes/scene-' + index}" class="s-link">
+					<span class="s-link__bg"></span>
+					<span class="s-link__txt">scene {{ index }}</span>
+				</router-link>
+			</div>
 		</div>
 	</div>
 </template>
+
+<style lang="scss" scoped>
+	@import '@/assets/sass/_settings-tools.scss';
+
+	.s-h1 {
+		font-weight: bold;
+		line-height: $lh-solid;
+		letter-spacing: $ls-heading;
+		font-size: calc(12vw + 20px);
+	}
+
+	.s-h2 {
+		line-height: $lh-title;
+		letter-spacing: $ls-heading;
+		font-size: calc(3vw + 16px);
+	}
+
+	.s-h3 {
+		line-height: $lh-title;
+		letter-spacing: $ls-heading;
+		font-size: calc(0.5vw + 12px);
+	}
+
+	.s-link {
+		display: inline-block;
+		position: relative;
+		line-height: $lh-title;
+		letter-spacing: $ls-heading;
+		font-size: calc(2vw + 16px);
+		transition: $fade;
+
+		&:hover {
+			.s-link__txt {
+				color: $light;
+			}
+
+			.s-link__bg {
+                transform: scaleX(1);
+                transform-origin: 110% 0;
+			}
+		}
+	}
+
+	.s-link__bg {
+		@include full(absolute);
+		background-color: $dark;
+		transform: scaleX(0);
+		transform-origin: -10% 0;
+		transition: $fade;
+	}
+
+	.s-link__txt {
+        position: relative;
+        transition: $fade;
+	}
+</style>
