@@ -1,12 +1,12 @@
 <template>
 	<div>
-		<header class="pv-8">
+		<header class="pt-8 pb-8 pb-16@m">
 			<h1 class="s-h1 mb-1">freek fabricius</h1>
 			<h2 class="s-h2">lost my controller</h2>
 		</header>
 
 		<h3 class="s-h3 mb-4px">album cover animation generator</h3>
-		<hr class="mb-3 mb-6@m" />
+		<hr class="mb-2 mb-4@m" />
 		<div class="mb-1">
 			<div v-for="index in 4" :key="index" class="mb-1">
 				<router-link :to="{path: '/scenes/scene-' + index}" class="s-link">
@@ -41,11 +41,10 @@
 	}
 
 	.s-link {
-		display: inline-block;
 		position: relative;
 		line-height: $lh-title;
 		letter-spacing: $ls-heading;
-		font-size: calc(2vw + 16px);
+		font-size: calc(1.5vw + 16px);
 		transition: $fade;
 
 		&:hover {

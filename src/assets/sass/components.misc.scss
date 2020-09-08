@@ -4,10 +4,10 @@
 }
 
 .input {
-    height: 36px;
-    padding: space(1);
+    padding: 6px space(1) space(1);
     border: 1px solid $dark;
     font-weight: bold;
+    transition: $fade-s;
 
     &:focus {
         box-shadow: 0 0 0 1px $dark;
@@ -17,11 +17,10 @@
 .button,
 .button:hover,
 .button:focus {
-    height: 36px;
-    padding: 0 space(2);
-    line-height: 0;
+    padding: 6px space(2) space(1);
     border: 1px solid $dark;
     font-weight: bold;
+    transition: $fade-s;
 
     &:hover,
     &:focus {
