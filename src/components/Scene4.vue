@@ -22,34 +22,15 @@
 		</div>
 		<div class="frame" :class="{'is-dark': bg.dark, 'is-flickering': bg.flickering}">
 			<div class="full-absolute">
-				<div>
+				<div v-for="(entry, key) in elements" :key="key">
 					<img
 						v-for="index in 32"
-						:key="'lost' + index"
-						src="@/assets/img/lost.png"
-						alt="lost"
-						class="img s-lost"
-						:style="`height: ${Math.round(Math.random(scale, scale + 3) * 10)}%`"
-					/>
-				</div>
-				<div>
-					<img
-						v-for="index in 32"
-						:key="'my' + index"
-						src="@/assets/img/my.png"
-						alt="my"
-						class="img s-my"
-						:style="`height: ${Math.round(Math.random(scale, scale + 3) * 10)}%`"
-					/>
-				</div>
-				<div>
-					<img
-						v-for="index in 32"
-						:key="'controller' + index"
-						src="@/assets/img/controller.png"
-						alt="controller"
-						class="img s-controller"
-						:style="`height: ${Math.round(Math.random(scale, scale + 3) * 10)}%`"
+						:key="entry + index"
+						:src="require(`@/assets/img/${entry}.png`)"
+						:alt="entry"
+						class="img"
+						:class="'s-' + entry"
+						:style="`height: ${$options.filters.getRandomInt(scale) + 3}%`"
 					/>
 				</div>
 			</div>
@@ -69,6 +50,7 @@
 				},
 				scale: 6,
 				time: 8,
+				elements: ['lost', 'my', 'controller'],
 			};
 		},
 		methods: {

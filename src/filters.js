@@ -56,3 +56,7 @@ Vue.filter('getValue', (array, key, val, output) => {
     const entry = array.find(obj => obj[key] === val);
     return entry[output];
 });
+
+Vue.filter('getRandomInt', (max) => {
+    return Math.floor(Math.random() * Math.floor(max));
+});
