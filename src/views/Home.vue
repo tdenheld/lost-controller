@@ -40,6 +40,7 @@
 		font-size: calc(0.5vw + 12px);
 	}
 
+	// --------------------
 	.s-link {
 		position: relative;
 		line-height: $lh-title;
@@ -47,28 +48,28 @@
 		font-size: calc(1.5vw + 16px);
 		transition: $fade;
 
+		&__bg {
+			@include full(absolute);
+			background-color: $dark;
+			transform: scaleX(0);
+			transform-origin: -10% 0;
+			transition: $fade;
+		}
+
+		&__txt {
+			position: relative;
+			transition: $fade;
+		}
+
 		&:hover {
 			.s-link__txt {
 				color: $light;
 			}
 
 			.s-link__bg {
-                transform: scaleX(1);
-                transform-origin: 110% 0;
+				transform: scaleX(1);
+				transform-origin: 110% 0;
 			}
 		}
-	}
-
-	.s-link__bg {
-		@include full(absolute);
-		background-color: $dark;
-		transform: scaleX(0);
-		transform-origin: -10% 0;
-		transition: $fade;
-	}
-
-	.s-link__txt {
-        position: relative;
-        transition: $fade;
 	}
 </style>
