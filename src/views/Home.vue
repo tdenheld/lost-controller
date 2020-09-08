@@ -7,7 +7,7 @@
 
 		<h3 class="s-h3 mb-4px">album cover animation generator</h3>
 		<hr class="mb-2 mb-4@m" />
-		<div class="mb-1">
+		<div class="pb-8">
 			<div v-for="index in 4" :key="index" class="mb-1">
 				<router-link :to="{path: '/scenes/scene-' + index}" class="s-link">
 					<span class="s-link__bg"></span>
