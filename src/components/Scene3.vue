@@ -1,5 +1,6 @@
 <template>
 	<div>
+        <!-- controls -->
 		<div class="g g-af-c@m gap-2 items-end mb-2">
 			<button
 				class="button"
@@ -12,6 +13,8 @@
 				:class="{'is-active': bg.flickering}"
 			>flickering background</button>
 		</div>
+
+        <!-- frame -->
 		<div class="frame" :class="{'is-dark': bg.dark, 'is-flickering': bg.flickering}">
 			<div class="full-absolute">
 				<div>

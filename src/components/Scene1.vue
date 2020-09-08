@@ -1,5 +1,6 @@
 <template>
 	<div>
+        <!-- controls -->
 		<div class="g g-af-c@m gap-2 items-end mb-2">
 			<div>
 				<label for="scatterTrail" class="db f12">scatter trail (px: 0 - 999)</label>
@@ -21,6 +22,8 @@
 				:class="{'is-active': bg.flickering}"
 			>flickering background</button>
 		</div>
+
+        <!-- frame -->
 		<div class="frame" :class="{'is-dark': bg.dark, 'is-flickering': bg.flickering}" style="cursor: none">
 			<div class="full-absolute">
 				<div ref="frame"></div>

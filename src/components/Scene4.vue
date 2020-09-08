@@ -1,5 +1,6 @@
 <template>
 	<div>
+        <!-- controls -->
 		<div class="g g-af-c@m gap-2 items-end mb-2">
 			<div>
 				<label for="scale" class="db f12">scale random (%)</label>
@@ -20,6 +21,8 @@
 				:class="{'is-active': bg.flickering}"
 			>flickering background</button>
 		</div>
+
+        <!-- frame -->
 		<div class="frame" :class="{'is-dark': bg.dark, 'is-flickering': bg.flickering}">
 			<div class="full-absolute">
 				<div v-for="(entry, key) in elements" :key="key">
