@@ -1,5 +1,8 @@
 <template>
 	<div class="pb-8">
+		<nav class="pt-8 pb-4">
+			<router-link to="/">index</router-link>
+		</nav>
 		<h1 class="s-h1 mb-6">{{ $route.params.id | replace('-', ' ') }}</h1>
 		<component v-bind:is="scene"></component>
 	</div>
@@ -32,7 +35,7 @@
 	@import '@/assets/sass/_settings-tools.scss';
 
 	.s-h1 {
-        font-weight: bold;
+		font-weight: bold;
 		line-height: $lh-solid;
 		letter-spacing: $ls-heading;
 		font-size: calc(6vw + 20px);

@@ -1,9 +1,8 @@
 <template>
 	<div class="container">
-		<nav class="pt-8 pb-4" v-if="$route.name !== 'Home'">
-			<router-link to="/">index</router-link>
-		</nav>
-		<router-view />
+		<transition name="slide" appear mode="out-in">
+			<router-view />
+		</transition>
 	</div>
 </template>
 

@@ -15,6 +15,24 @@
 
 
 // ------------------------------------
+.slide-enter-active,
+.slide-leave-active {
+    transition: all 250ms $ease-out;
+}
+
+.slide-enter {
+    transform: translateX(32px);
+    opacity: 0;
+}
+
+.slide-leave-to {
+    transform: translateX(-32px);
+    opacity: 0;
+}
+
+
+
+// ------------------------------------
 .fade-up-enter-active,
 .fade-up-leave-active,
 .fade-l-enter-active,
@@ -38,7 +56,7 @@
 
 .fade-r-enter,
 .fade-r-leave-to {
-    transform: translateX(10px);
+    transform: translateX(20px);
     opacity: 0;
 }
 

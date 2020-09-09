@@ -7,7 +7,6 @@
     padding: 6px space(1) space(1);
     border: 1px solid $dark;
     font-weight: bold;
-    transition: $fade-s;
 
     &:focus {
         box-shadow: 0 0 0 1px $dark;
@@ -20,7 +19,6 @@
     padding: 6px space(2) space(1);
     border: 1px solid $dark;
     font-weight: bold;
-    transition: $fade-s;
 
     &:hover,
     &:focus {

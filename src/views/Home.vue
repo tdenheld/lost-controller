@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="pb-8">
 		<header class="pt-8 pb-8 pb-16@m">
 			<h1 class="s-h1 mb-1">freek fabricius</h1>
 			<h2 class="s-h2">lost my controller</h2>
@@ -7,13 +7,12 @@
 
 		<h3 class="s-h3 mb-4px">album cover animation generator</h3>
 		<hr class="mb-2 mb-4@m" />
-		<div class="pb-8">
-			<div v-for="index in 4" :key="index" class="mb-1">
-				<router-link :to="{path: '/scenes/scene-' + index}" class="s-link">
-					<span class="s-link__bg"></span>
-					<span class="s-link__txt">scene {{ index }}</span>
-				</router-link>
-			</div>
+
+		<div v-for="index in 4" :key="index" class="mb-1">
+			<router-link :to="{path: '/scenes/scene-' + index}" class="s-link">
+				<span class="s-link__bg"></span>
+				<span class="s-link__txt">scene {{ index }}</span>
+			</router-link>
 		</div>
 	</div>
 </template>
@@ -29,12 +28,14 @@
 	}
 
 	.s-h2 {
+		font-weight: 200;
 		line-height: $lh-title;
 		letter-spacing: $ls-heading;
 		font-size: calc(3vw + 16px);
 	}
 
 	.s-h3 {
+		font-weight: 500;
 		line-height: $lh-title;
 		letter-spacing: $ls-heading;
 		font-size: calc(0.5vw + 12px);
