@@ -36,8 +36,8 @@
 	export default {
 		data() {
 			return {
-				scatterTrail: 8,
-				timeAfter: 100,
+				scatterTrail: 0,
+				timeAfter: 1000,
 				bg: {
 					dark: false,
 					flickering: false,
