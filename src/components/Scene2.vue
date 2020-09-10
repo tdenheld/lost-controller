@@ -3,7 +3,7 @@
 		<!-- controls -->
 		<div class="g g-af-c@m gap-2 items-end mb-2">
 			<div>
-				<div class="f12 f-white">spacer text</div>
+				<div class="f12 v-hidden">spacer text</div>
 				<button
 					class="button"
 					@click="bg.dark = !bg.dark"
