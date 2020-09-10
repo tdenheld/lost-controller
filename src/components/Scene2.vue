@@ -1,12 +1,15 @@
 <template>
 	<div>
-        <!-- controls -->
+		<!-- controls -->
 		<div class="g g-af-c@m gap-2 items-end mb-2">
-			<button
-				class="button"
-				@click="bg.dark = !bg.dark"
-				:class="{'is-active': bg.dark}"
-			>dark background</button>
+			<div>
+				<div class="f12 f-white">spacer text</div>
+				<button
+					class="button"
+					@click="bg.dark = !bg.dark"
+					:class="{'is-active': bg.dark}"
+				>dark background</button>
+			</div>
 			<button
 				class="button"
 				@click="bg.flickering = !bg.flickering"
@@ -14,7 +17,7 @@
 			>flickering background</button>
 		</div>
 
-        <!-- frame -->
+		<!-- frame -->
 		<div class="frame" :class="{'is-dark': bg.dark, 'is-flickering': bg.flickering}">
 			<div class="full-absolute">
 				<div>
