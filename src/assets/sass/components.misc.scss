@@ -68,6 +68,7 @@
     }
 
     &.is-dark {
-        background-color: $dark;
+        background-color: $white;
+        filter: invert(1);
     }
 }
