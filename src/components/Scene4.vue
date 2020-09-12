@@ -14,7 +14,7 @@
 				class="button"
 				@click="bg.dark = !bg.dark"
 				:class="{'is-active': bg.dark}"
-			>dark background</button>
+			>inverted background</button>
 			<button
 				class="button"
 				@click="bg.flickering = !bg.flickering"

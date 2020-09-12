@@ -5,10 +5,10 @@
 			<div>
 				<div class="f12 v-hidden">spacer text</div>
 				<button
-					class="button"
+					class="button w-100"
 					@click="bg.dark = !bg.dark"
 					:class="{'is-active': bg.dark}"
-				>dark background</button>
+				>inverted background</button>
 			</div>
 			<button
 				class="button"
