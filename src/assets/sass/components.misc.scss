@@ -34,7 +34,7 @@
 .frame {
     @keyframes bg-color-flicker {
         0% {
-            background-color: $white;
+            background-color: $light;
         }
 
         5% {
@@ -42,7 +42,7 @@
         }
 
         10% {
-            background-color: $white;
+            background-color: $light;
         }
 
         15% {
@@ -50,7 +50,7 @@
         }
 
         80% {
-            background-color: $white;
+            background-color: $light;
         }
 
         90% {

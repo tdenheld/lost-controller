@@ -2,12 +2,12 @@
 	<div class="pb-8">
 		<nav class="pt-8 pb-4">
 			<router-link to="/" class="s-link">index</router-link>
-			<router-link
+			<!-- <router-link
 				v-for="index in 4"
 				:key="index"
 				:to="{path: '/scenes/scene-' + index}"
 				class="s-link hidden-until@m"
-			>s{{ index }}</router-link>
+			>s{{ index }}</router-link> -->
 		</nav>
 		<h1 class="s-h1 mb-6">{{ $route.params.id | replace('-', ' ') }}</h1>
 		<component v-bind:is="scene"></component>
